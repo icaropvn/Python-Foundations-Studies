@@ -1,2 +1,2 @@
-# Python-Studies
- Repositório de exemplos e exercícios resolvidos em python.
+# Python Studies
+ Repositório de estudo em python: exemplos e exercícios resolvidos.
