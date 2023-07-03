@@ -1,2 +1,2 @@
 # Python Studies
- Examples and Exercises made in Python.
+ Examples and exercises made in Python.
