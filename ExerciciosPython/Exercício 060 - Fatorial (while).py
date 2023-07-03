@@ -15,4 +15,3 @@ while i != 1:
     i -= 1
 
 print(f'{num}! = {tot}')
-
