@@ -6,12 +6,19 @@ Algoritmo para ler um número
 e mostrar seu fatorial.
 '''
 
+cian = '\033[3;36m'
+yellow = '\033[3;33m'
+end = '\033[m'
+
 num = int(input('Insira um número para o fatorial: '))
 
-i = num
-tot = 1
-while i != 1:
-    tot = tot * i
-    i -= 1
+print(f'{cian}{num}!{end} = ', end='')
 
-print(f'{num}! = {tot}')
+fat = 1
+while num != 0:
+    fat = fat * num
+    if num != 1:
+        print(f'{num} * ', end='')
+    num -= 1
+
+print(f'1 = {yellow}{fat}{end}', end='')
