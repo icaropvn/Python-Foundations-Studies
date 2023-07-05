@@ -10,11 +10,22 @@ Fibonacci.
 '''
 
 num = int(input('Insira a quantidade de termos da sequência a serem impressos: '))
+print(f'\nSequência de Fibonacci com {num} termo(s): ', end='')
 
-print('1, 1', end=', ')
-termo = 2
-i = 1
-while i != num:
-    print(termo, end=', ')
-    termo = termo + termo-1
-    i += 1
+termo_ant = 1
+termo = 1
+termo_novo = 1
+posicao = 0
+while posicao != num:
+    if posicao+1 == num:
+        print(termo_novo, end='')
+    else:
+        print(termo_novo, end=', ')
+    if posicao == 0 and num != 1:
+        print('1', end=', ')
+    termo_novo = termo_ant + termo
+    termo_ant = termo
+    termo = termo_novo
+    posicao += 1
+
+print('\n', end='')
