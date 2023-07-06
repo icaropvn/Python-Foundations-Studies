@@ -16,8 +16,8 @@ termo_ant = 1
 termo = 1
 termo_novo = 1
 posicao = 0
-while posicao != num:
-    if posicao+1 == num:
+while posicao != num-1:
+    if posicao == num-2:
         print(termo_novo, end='')
     else:
         print(termo_novo, end=', ')
