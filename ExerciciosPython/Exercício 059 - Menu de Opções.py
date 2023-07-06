@@ -15,6 +15,7 @@ from time import sleep
 
 italic = '\033[3m'
 red = '\033[31m'
+ita_yellow = '\033[3;33m'
 ita_blue = '\033[3;34m'
 end = '\033[m'
 
@@ -22,10 +23,7 @@ num1 = int(input('Insira um número: '))
 num2 = int(input('Insira outro número: '))
 
 answer = 0
-flag = 0
 while answer != 5:
-    if flag == 1:
-        sleep(2)
     answer = int(input((f'{italic}\nO que deseja fazer?{end}\n'
                         '[1] Somar\n'
                         '[2] Multiplicar\n'
@@ -47,6 +45,12 @@ while answer != 5:
     elif answer == 4:
         num1 = int(input('\nInsira um novo número: '))
         num2 = int(input('Insira outro número: '))
-    flag = 1
+    elif answer != 5:
+        print(f'{red}{italic}Opção inválida. Tente novamente.{end}')
 
+    if answer != 5:
+        sleep(2)
+
+print(f'\n{ita_yellow}Finalizando...{end}', end='')
+sleep(1.5)
 print(f'{italic}\nAté a próxima!{end}')
