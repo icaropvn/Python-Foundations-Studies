@@ -28,17 +28,16 @@ print(f'PC: > Tente adivinhar!\n{end}')
 pc = int(randint(0, 10))
 sleep(1)
 
-flag = 1
+player = int(input('Insira aqui sua proposta: '))
 palpites = 1
-
-while flag == 1:
-    player = int(input('Insira aqui sua proposta: '))
-    sleep(1)
-    if player != pc:
-        print(f'\n{red}PC: > Resposta errada! Tente outra vez.{end}')
-        palpites += 1
+sleep(0.5)
+while player != pc:
+    if pc > player:
+        player = int(input(f'\n{red}PC: > Resposta errada! O número é maior...\n{end}Tente de novo: '))
     else:
-        flag = 0
+        player = int(input(f'\n{red}PC: > Resposta errada! O número é menor...\n{end}Tente de novo: '))
+    palpites += 1
+    sleep(0.5)
 
 if palpites == 1:
     print(f'{cian}\nPC: > UAU! Você acertou de primeira! Parabéns!\nPC: > Resposta: {pc}\n{end}'
