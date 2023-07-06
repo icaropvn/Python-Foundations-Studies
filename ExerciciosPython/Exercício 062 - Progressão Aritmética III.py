@@ -18,7 +18,7 @@ termo = termo1
 tot_quantity = 10
 quantity = 0
 answer = 'S'
-while answer == 'S':
+while answer == 'S' or answer == 'SIM':
     print('PA = (', end='')
     for i in range(1, tot_quantity+1):
         if i == tot_quantity:
@@ -34,7 +34,7 @@ while answer == 'S':
         termo += razao
     termo = termo1
     answer = str(input('\n\nDeseja imprimir mais termos? (S/N) ')).upper()
-    if answer == 'S':
+    if answer == 'S' or answer == 'SIM':
         quantity = int(input('Quantos? '))
         tot_quantity += quantity
 
