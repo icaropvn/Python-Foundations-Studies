@@ -14,11 +14,9 @@ cian = '\033[3;36m'
 ita = '\033[3m'
 end = '\033[m'
 
-soma = 0
-cont = 0
-num = 0
+num = soma = cont = 0
 while num != 999:
-    num = float(input('Insira um valor inteiro (999 para encerrar): '))
+    num = int(input('Insira um valor inteiro (999 para encerrar): '))
     if num != 999:
         cont += 1
         soma += num
