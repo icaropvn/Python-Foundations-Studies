@@ -9,20 +9,28 @@ Fibonacci.
 1, 1, 2, 3, 5, 8, 13, 21, ...
 '''
 
-num = int(input('Insira a quantidade de termos da sequência a serem impressos: '))
-print(f'\nSequência de Fibonacci com {num} termo(s): ', end='')
+green = '\033[32m'
+purple = '\033[36m'
+end = '\033[m'
 
-termo_ant = 1
+name = 'GERADOR DE SEQUÊNCIA DE FIBONACCI'
+print(15*f'{purple}==={end}' + f'\n{green}{name:^45}{end}\n' + 15*f'{purple}==={end}')
+
+quantity = int(input('Quantos termos gostaria de imprimir? '))
+if quantity == 1:
+    print(f'\nSequência de Fibonacci com {quantity} termo: ', end='')
+else:
+    print(f'\nSequência de Fibonacci com {quantity} termos: ', end='')
+
+termo_ant = 0
 termo = 1
-termo_novo = 1
-posicao = 0
-while posicao != num-1:
-    if posicao == num-2:
-        print(termo_novo, end='')
+termo_novo = 0
+posicao = 1
+while posicao <= quantity:
+    if posicao == quantity:
+        print(f'{termo}', end='')
     else:
-        print(termo_novo, end=', ')
-    if posicao == 0 and num != 1:
-        print('1', end=', ')
+        print(f'{termo}', end=', ')
     termo_novo = termo_ant + termo
     termo_ant = termo
     termo = termo_novo
