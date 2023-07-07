@@ -9,6 +9,7 @@ se sim, quantos.
 
 yellow = '\033[33m'
 cian = '\033[3;36m'
+ita = '\033[3m'
 end = '\033[m'
 
 termo1 = int(input('Insira o primeiro termo da PA: '))
@@ -20,7 +21,8 @@ quantity = 0
 answer = 'S'
 while answer == 'S' or answer == 'SIM':
     print('PA = (', end='')
-    for i in range(1, tot_quantity+1):
+    i = 1
+    while i <= tot_quantity:
         if i == tot_quantity:
             if i > tot_quantity - quantity:
                 print(f'{yellow}{termo}{end}', end=')')
@@ -32,10 +34,12 @@ while answer == 'S' or answer == 'SIM':
             else:
                 print(termo, end=', ')
         termo += razao
+        i += 1
     termo = termo1
     answer = str(input('\n\nDeseja imprimir mais termos? (S/N) ')).upper()
     if answer == 'S' or answer == 'SIM':
         quantity = int(input('Quantos? '))
         tot_quantity += quantity
 
-print(f'\n{cian}Até a próxima!{end}')
+print(f'\n{ita}Você gerou no total {cian}{i-1}{end}{ita} termos da PA.{end}\n'
+      f'{cian}Até a próxima!{end}')

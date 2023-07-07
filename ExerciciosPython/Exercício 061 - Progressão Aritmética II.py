@@ -10,7 +10,7 @@ razao = int(input('Insira a razão da PA: '))
 
 print(f'\nPA = (', end='')
 i = 1
-while i != 11:
+while i < 11:
     if i == 10:
         print(termo, end=')')
     else:
