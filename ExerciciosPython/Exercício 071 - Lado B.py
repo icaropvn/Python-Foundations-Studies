@@ -12,10 +12,14 @@ entregues.
 Considerando as cédulas: R$50, R$20, R$10 e R$1
 '''
 
+ita = '\033[3m'
+end = '\033[m'
+
 name = 'SIRSO\'S BANK'
 print(15*'--' + f'\n{name:^30}\n' + 15*'--')
 
 valor = int(input('Quanto deseja sacar? R$'))
+print('\n', end='')
 
 ced = 50
 tot_ced = 0
@@ -24,10 +28,8 @@ while True:
         valor -= ced
         tot_ced += 1
     else:
-        if valor == 0:
-            break
         if tot_ced > 0:
-            print(f'Total de {tot_ced} cédulas de R${ced}')
+            print(f'{ita}Total de {tot_ced} cédulas de R${ced}{end}')
         tot_ced = 0
         if ced == 50:
             ced = 20
@@ -35,3 +37,5 @@ while True:
             ced = 10
         else:
             ced = 1
+        if valor == 0:
+            break
