@@ -12,14 +12,27 @@ entregues.
 Considerando as cédulas: R$50, R$20, R$10 e R$1
 '''
 
-valor = int(input('Valor a ser sacado: '))
+name = 'SIRSO\'S BANK'
+print(15*'--' + f'\n{name:^30}\n' + 15*'--')
 
-c50 = valor // 50
-c20 = (valor % 50) // 20
-c10 = (valor % 20) // 10
-c1 = valor % 10
+valor = int(input('Quanto deseja sacar? R$'))
+resto = valor
+print('\n', end='')
 
-print(f'Cédulas de R$50: {c50}\n'
-      f'Cédulas de R$20: {c20}\n'
-      f'Cédulas de R$10: {c10}\n'
-      f'Cédulas de R$1: {c1}\n')
+cedula = 50
+totcedula = 0
+cont = 1
+while True:
+    if resto == 0:
+        break
+    totcedula = resto // cedula
+    resto = resto % cedula
+    if totcedula > 0:
+        print(f'Total de {totcedula} cédulas de R${cedula}')
+    if cont == 1:
+        cedula = 20
+    elif cont == 2:
+        cedula = 10
+    else:
+        cedula = 1
+    cont += 1
