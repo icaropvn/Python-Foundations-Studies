@@ -22,9 +22,7 @@ print(14*'---' + f'\n{shop_name:^42}\n' + 14*'---')
 tot = 0
 maiormil = 0
 barato = 0
-barato_name = ''
 cont = 1
-stop = 0
 while True:
     name = str(input(f'Nome do produto {cont}: '))
     price = float(input(f'Preço do produto {cont}: R$'))
@@ -32,6 +30,7 @@ while True:
 
     if cont == 1:
         barato = price
+        barato_name = name
 
     tot += price
 
@@ -45,18 +44,16 @@ while True:
         answer = str(input(f'{ita}Deseja cadastrar mais produtos? [S/N]{end} ')).strip().upper()
         if answer == 'S':
             cont += 1
-            print(14 * '---')
             break
         elif answer == 'N':
-            stop = 1
-            print(14 * '---')
             break
         else:
             print(f'{red}Resposta inválida.{end}\n' + 14*'---')
 
-    if stop == 1:
+    print(14 * '---')
+    if answer == 'N':
         break
 
 print(f'Total a pagar: {ita}R${tot}{end}\n'
       f'Produtos que custam mais de R$1000: {ita}{maiormil}{end}\n'
-      f'Produto mais barato: {ita}{barato_name} (R${barato}){end}')
+      f'Produto mais barato: {ita}{barato_name} (R${barato:.2f}){end}')
