@@ -33,8 +33,7 @@ else:
 print(f'> PC: Certo! Eu sou {pc}.')
 sleep(1.5)
 
-stop = 0
-wins = 0
+stop = wins = 0
 while True:
     while True:
         user_num = str(input(f'> PC: {ita}Diga seu valor:{end} '))
