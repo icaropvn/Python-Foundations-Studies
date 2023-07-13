@@ -15,12 +15,13 @@ while True:
     if loop == 0:
         num = int(input(f'{ita}Gostaria de ver a tabuada de qual valor?\n(insira um valor negativo para encerrar){end}\n'))
     else:
-        num = int(input(f'{ita}\nE agora...? Qual valor?\n(insira um valor negativo para encerrar)\n{end}'))
+        num = int(input(f'{ita}E agora...? Qual valor?\n(insira um valor negativo para encerrar)\n{end}'))
+    print(10 * '----')
     if num < 0:
         break
-    print(7 * '--')
     for i in range(1, 11):
         print(f'{num:2} x {i:2} = {num*i:2}')
-    print(7 * '--')
+    print(10 * '----')
     loop = 1
-print(f'{ita}\nObrigado! Até mais!{end}')
+
+print(f'{ita}Obrigado! Até mais!{end}')
