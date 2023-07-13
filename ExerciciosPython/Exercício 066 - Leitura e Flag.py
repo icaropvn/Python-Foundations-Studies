@@ -20,6 +20,6 @@ while True:
     soma += num
 
 if cont > 1:
-    print(f'\nA soma dos {ita}{cont}{end} valores é {ita}{soma}{end}')
+    print(f'\n{ita}A soma dos {cont} valores é {soma}{end}')
 else:
-    print(f'\nO único valor digitado foi {ita}{soma}{end}')
+    print(f'\n{ita}O único valor digitado foi {soma}{end}')
