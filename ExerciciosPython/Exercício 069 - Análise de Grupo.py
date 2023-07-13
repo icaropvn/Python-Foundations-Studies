@@ -23,16 +23,19 @@ name = 'CADASTRE UMA PESSOA'
 print(10*'-----' + f'\n{name:^50}\n' + 10*'-----')
 
 stop = 0
-women20 = 0
-men = 0
-people18 = 0
+people18 = men = women20 = 0
 i = 1
 while True:
     age = int(input(f'Idade da pessoa {i}: '))
     if age > 18:
         people18 += 1
 
-    genre = str(input(f'Sexo biológico da pessoa {i} [M/F]: ')).strip().upper()
+    genre = ' '
+    while genre not in 'MF':
+        genre = str(input(f'Sexo biológico da pessoa {i} [M/F]: ')).strip().upper()
+        if genre not in 'MF':
+            print(f'{red}Insira uma resposta válida.{end}')
+            print(10 * '-----')
     if genre == 'M':
         men += 1
     if genre == 'F' and age < 20:
@@ -40,18 +43,19 @@ while True:
 
     print(10*'-----')
 
-    answer = ''
-    while answer != 'S' and answer != 'SIM' and answer != 'N' and answer != 'NÃO' and answer != 'NAO':
+    while True:
         answer = str(input(f'{ita}Deseja cadastrar mais pessoas? [S/N]{end} ')).strip().upper()
         if answer == 'S' or answer == 'SIM':
             i += 1
-            print(10 * '-----')
+            break
         elif answer == 'N' or answer == 'NÃO' or answer == 'NAO':
             stop = 1
-            print(10 * '-----')
+            break
         else:
             print(f'{red}Insira uma resposta válida.{end}')
+            print(10 * '-----')
 
+    print(10 * '-----')
     if stop == 1:
         break
 
