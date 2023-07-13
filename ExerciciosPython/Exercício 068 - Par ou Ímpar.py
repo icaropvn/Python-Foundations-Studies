@@ -25,16 +25,21 @@ print(20*f'{blue}=-={end}' + f'\n{title:^68}\n{title2:^70}\n' + 20*f'{red}=-={en
 sleep(1.5)
 print('> PC: Vamos jogar par ou ímpar!')
 sleep(1.5)
-user = str(input(f'> PC: {ita}Qual você quer ser? (impar/par){end} ')).strip().lower()
-if user == 'par':
-    pc = 'impar'
-else:
-    pc = 'par'
-print(f'> PC: Certo! Eu sou {pc}.')
-sleep(1.5)
+while True:
+    user = str(input(f'> PC: {ita}Qual você quer ser? (impar/par){end} ')).strip().lower()
+    if user == 'impar' or user == 'par':
+        break
+    else:
+        print(f'{red}> PC: {ita}Resposta Inválida{end}')
 
 stop = wins = 0
 while True:
+    if user == 'par':
+        pc = 'impar'
+    else:
+        pc = 'par'
+    print(f'> PC: Certo! Eu sou {pc}.')
+    sleep(1.5)
     while True:
         user_num = str(input(f'> PC: {ita}Diga seu valor:{end} '))
         if user_num.isnumeric():
@@ -69,7 +74,7 @@ while True:
                 stop = 1
                 break
             else:
-                print(f'{ita}{red}Resposta Inválida{end}')
+                print(f'{red}> PC: {ita}Resposta Inválida{end}')
 
     if stop == 1:
         break
