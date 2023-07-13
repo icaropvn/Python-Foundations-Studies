@@ -33,14 +33,22 @@ else:
 print(f'> PC: Certo! Eu sou {pc}.')
 sleep(1.5)
 
+stop = 0
 wins = 0
 while True:
-    user_num = int(input(f'> PC: {ita}Diga seu valor:{end} '))
+    while True:
+        user_num = str(input(f'> PC: {ita}Diga seu valor:{end} '))
+        if user_num.isnumeric():
+            user_num = int(user_num)
+            break
+        else:
+            print(f'{red}> PC: {ita}Valor Inválido{end}')
     pc_num = randint(0, 10)
     if (user_num + pc_num) % 2 == 0:
         win = 'par'
     else:
         win = 'impar'
+    sleep(1)
     print(f'\n> VALORES:\n'
           f'PC: {pc_num}\n'
           f'VOCÊ: {user_num}\n'
@@ -50,11 +58,21 @@ while True:
         wins += 1
     else:
         print(f'> PC: {red}Você perdeu...{end}\n> PC: {cian}Total de vitórias consecutivas: {wins}{end}')
-        answer = str(input('\n> PC: Deseja começar de novo com o contador de vitórias zerado?\n')).strip().lower()
-        if answer == 'sim' or answer == 's':
-            wins = 0
-            user = str(input(f'> PC: {ita}Qual você quer ser? (impar/par){end} ')).strip().lower()
-        else:
-            break
+
+        while True:
+            print(20 * '--')
+            answer = str(input('> PC: Deseja começar de novo com o contador de vitórias zerado?\n')).strip().lower()
+            if answer == 'sim' or answer == 's':
+                wins = 0
+                user = str(input(f'> PC: {ita}Qual você quer ser? (impar/par){end} ')).strip().lower()
+                break
+            elif answer == 'não' or answer == 'nao' or answer == 'n':
+                stop = 1
+                break
+            else:
+                print(f'{ita}{red}Resposta Inválida{end}')
+
+    if stop == 1:
+        break
 
 print(f'\n{ita}Mal posso esperar para jogar com você de novo!\nAté mais!{end}')
