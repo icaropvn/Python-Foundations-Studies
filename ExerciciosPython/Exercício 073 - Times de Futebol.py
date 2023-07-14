@@ -54,11 +54,9 @@ for i in range(0, 20):
 flag = 0
 for i in range(0, 20):
     if times[i] == 'Chapecoense':
-        posicao = i+1
+        print(f'\nA Chapecoense se encontra na posição {i+1} na tabela.')
         flag = 1
         break
 
 if flag == 0:
     print('\nA Chapecoense não se encontra na tabela.')
-else:
-    print(f'\nA Chapecoense se encontra na posição {posicao} na tabela.')
