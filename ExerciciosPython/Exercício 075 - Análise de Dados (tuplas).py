@@ -10,8 +10,12 @@ numa tupla. Ao final, mostrar:
 - Quais foram os números pares digitados
 '''
 
-nums = (int(input('Insira um número: ')), int(input('Insira outro número: ')),
-        int(input('Insira mais um número: ')), int(input('Insira o último número: ')))
+from random import choice
+
+questions = ('Insira outro número: ', 'Insira mais um número: ', 'Insira outro: ', 'Mais um: ')
+
+nums = (int(input('Insira um número: ')), int(input(choice(questions))),
+        int(input(choice(questions))), int(input(choice(questions))))
 
 count9 = nums.count(9)
 if 3 in nums:
@@ -20,7 +24,10 @@ else:
     pos3 = -1
 
 if count9 > 0:
-    print(f'\n1. Você digitou o número \'9\' {count9} vezes')
+    if count9 == 1:
+        print(f'\n1. Você digitou o número \'9\' 1 vez')
+    else:
+        print(f'\n1. Você digitou o número \'9\' {count9} vezes')
 else:
     print(f'\n\033[3;31m1. Você não digitou o número 9 em nenhum momento\033[m')
 
@@ -31,9 +38,14 @@ else:
 
 print('3. Os números pares digitados foram: ', end='')
 flag = 0
+flag_par = 0
 for i in range(0, 4):
     if nums[i] % 2 == 0:
-        print(nums[i], end=', ')
+        if flag_par == 0:
+            print(nums[i], end='')
+        else:
+            print(f', {nums[i]}', end='')
+        flag_par = 1
     else:
         flag += 1
 
