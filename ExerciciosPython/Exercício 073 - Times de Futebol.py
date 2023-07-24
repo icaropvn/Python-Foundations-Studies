@@ -15,7 +15,16 @@ times = ('Botafogo', 'Flamengo', 'Grêmio', 'Fluminense', 'Palmeiras', 'Braganti
          'Cruzeiro', 'Internacional', 'Athletico PR', 'Atlético MG', 'Santos', 'Cuiabá', 'Corinthians', 'Bahia',
          'Goiás', 'Coritiba', 'Vasco da Gama', 'América MG')
 
-print(f'Os 5 primeiros colocados do Brasileirão 2023 são: ', end='')
+print('Lista dos times: ', end='')
+for i in range(0, 20):
+    if i == 19:
+        print(times[i], end='\n' + 30*'=-=')
+    else:
+        print(times[i], end=', ')
+    if i % 5 == 0 and i != 0:
+        print('\n', end='')
+
+print(f'\nOs 5 primeiros colocados do Brasileirão 2023 são: ', end='')
 cont = 1
 for i in range(0, 5):
     if cont == 5:
