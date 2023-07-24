@@ -18,10 +18,6 @@ nums = (int(input('Insira um número: ')), int(input(choice(questions))),
         int(input(choice(questions))), int(input(choice(questions))))
 
 count9 = nums.count(9)
-if 3 in nums:
-    pos3 = nums.index(3) + 1
-else:
-    pos3 = -1
 
 if count9 > 0:
     if count9 == 1:
@@ -31,10 +27,10 @@ if count9 > 0:
 else:
     print(f'\n\033[3;31m1. Você não digitou o número 9 em nenhum momento\033[m')
 
-if pos3 == -1:
-    print(f'\033[3;31m2. O número 3 não se encontra na lista\033[m')
+if 3 in nums:
+    print(f'2. O primeiro número 3 se encontra na {nums.index(3) + 1}ª posição')
 else:
-    print(f'2. O primeiro número 3 se encontra na {pos3}ª posição')
+    print(f'\033[3;31m2. O número 3 não se encontra na lista\033[m')
 
 print('3. Os números pares digitados foram: ', end='')
 flag = 0
