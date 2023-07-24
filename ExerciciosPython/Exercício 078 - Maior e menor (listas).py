@@ -16,5 +16,24 @@ for i in range(0, 5):
 maior = max(nums)
 menor = min(nums)
 
-print(f'\nMaior valor: {maior}, na posição {nums.index(maior)+1}\n'
-      f'Menor valor: {menor}, na posição {nums.index(menor)+1}')
+print(f'\nMaior valor: {maior}, ', end='')
+
+temp = nums.count(maior)
+if temp > 1:
+    print('nas posições ', end='')
+else:
+    print('na posição ', end='')
+for i in range(0, 5):
+    if nums[i] == maior:
+        print(f'{i+1} ', end='')
+
+print(f'\nMenor valor: {menor}, ', end='')
+temp = nums.count(menor)
+if temp > 1:
+    print('nas posições ', end='')
+else:
+    print('na posição ', end='')
+for i in range(0, 5):
+    if nums[i] == menor:
+        print(f'{i+1} ', end='')
+print('\n')
