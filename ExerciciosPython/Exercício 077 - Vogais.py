@@ -6,8 +6,14 @@ Algoritmo que contenha uma tupla com várias palavras (sem acentos).
 Mostrar para cada palavra quais são suas vogais.
 '''
 
-words = ('magnetismo', 'salgado', 'castor', 'rico', 'declarar', 'vampiro',
-         'clube', 'mascote', 'vergonha', 'cardeal')
+from random import choice
+
+words_seq = ('perola', 'montanha', 'magnetismo', 'salgado', 'castor', 'rico', 'declarar',
+             'vampiro', 'clube', 'mascote', 'vergonha', 'cardeal', 'raiva', 'fragmento',
+             'anestesia', 'nuvem', 'confianca', 'cometa', 'diplomata', 'acordo')
+
+words = (choice(words_seq), choice(words_seq), choice(words_seq), choice(words_seq),
+         choice(words_seq), choice(words_seq), choice(words_seq))
 
 flagA = 0
 flagE = 0
