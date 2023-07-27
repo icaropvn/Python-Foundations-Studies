@@ -43,7 +43,6 @@ for num in nums:
         impares.append(num)
 
 print('\n' + 20 * '===')
-
 print(f'Lista Completa: {nums}')
 
 if len(pares) > 0:
