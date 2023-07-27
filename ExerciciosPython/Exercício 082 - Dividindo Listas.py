@@ -20,13 +20,7 @@ impares = []
 
 stop = 0
 while True:
-    num = int(input('> Digite um valor: '))
-    nums.append(num)
-
-    if num % 2 == 0:
-        pares.append(num)
-    else:
-        impares.append(num)
+    nums.append(int(input('> Digite um valor: ')))
 
     while True:
         answer = str(input(f'{ita}Continuar? [S/N]{end}\n')).strip().lower()
@@ -41,6 +35,12 @@ while True:
 
     if stop == 1:
         break
+
+for num in nums:
+    if num % 2 == 0:
+        pares.append(num)
+    else:
+        impares.append(num)
 
 print('\n' + 20 * '===')
 
