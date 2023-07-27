@@ -16,7 +16,9 @@ for i in range(0, 5):
 maior = max(nums)
 menor = min(nums)
 
-print(f'\nMaior valor: {maior}, ', end='')
+print(20 * '===')
+print(f'Valores digitados: {nums}\n'
+      f'Maior valor: {maior}, ', end='')
 
 temp = nums.count(maior)
 if temp > 1:
@@ -28,6 +30,7 @@ for i in range(0, 5):
         print(f'{i+1} ', end='')
 
 print(f'\nMenor valor: {menor}, ', end='')
+
 temp = nums.count(menor)
 if temp > 1:
     print('nas posições ', end='')
@@ -36,4 +39,4 @@ else:
 for i in range(0, 5):
     if nums[i] == menor:
         print(f'{i+1} ', end='')
-print('\n')
+print('\n', end='')
