@@ -11,6 +11,7 @@ em ordem CRESCENTE
 '''
 
 red = '\033[3;31m'
+green = '\033[3;32m'
 ita = '\033[3m'
 end = '\033[m'
 
@@ -21,11 +22,12 @@ while True:
     num = int(input('> Digite um valor: '))
     if num not in nums:
         nums.append(num)
+        print(f'{green}Valor adicionado à lista!{end}')
     else:
-        print(f'{red}O valor digitado é uma duplicata.{end}\n')
+        print(f'{red}O valor digitado é uma duplicata.{end}')
 
     while True:
-        answer = str(input(f'{ita}Gostaria de inserir mais valores? [S/N]{end}\n')).strip().lower()
+        answer = str(input(f'{ita}> Gostaria de inserir mais valores? [S/N]{end}\n')).strip().lower()
         if answer == 'sim' or answer == 's':
             print('\n', end='')
             break
@@ -40,5 +42,5 @@ while True:
 
 nums.sort()
 print(20 * '=-=' + '\n'
-      f'{ita}Lista dos valores inseridos:{end}\n'
+      f'{ita}Lista dos valores únicos inseridos:{end}\n'
       f'{nums}')
