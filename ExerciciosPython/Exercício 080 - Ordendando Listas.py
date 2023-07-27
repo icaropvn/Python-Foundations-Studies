@@ -16,11 +16,11 @@ end = '\033[m'
 nums = list()
 
 for i in range(0, 5):
+    num = int(input(f'Digite o {i + 1}º valor: '))
     if i == 0:
-        nums.append(int(input(f'Digite o 1º valor: ')))
+        nums.append(num)
         print(f'{green}Primeiro valor adicionado à lista.{end}')
     else:
-        num = int(input(f'Digite o {i+1}º valor: '))
         for j in range(0, len(nums)):
             if num < nums[j]:
                 nums.insert(j, num)
