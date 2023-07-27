@@ -39,4 +39,4 @@ else:
 for i in range(0, 5):
     if nums[i] == menor:
         print(f'{i+1} ', end='')
-print('\n', end='')
+print()
