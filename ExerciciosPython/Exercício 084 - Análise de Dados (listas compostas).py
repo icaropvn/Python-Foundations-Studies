@@ -22,7 +22,7 @@ light_people_counter = 0
 heavy_people_counter = 0
 
 while True:
-    temp.append(str(input('Nome: ')))
+    temp.append(str(input('Nome: ')).strip().title())
     weight = float(input('Peso (Kg): '))
     temp.append(weight)
     print(30 * '-')
