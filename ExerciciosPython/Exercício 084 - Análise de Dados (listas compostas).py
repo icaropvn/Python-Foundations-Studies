@@ -68,14 +68,13 @@ print(f'Número de pessoas cadastradas: {len(people)}\n'
       f'Pessoas mais pesadas ({maior:.2f}Kg): ', end='')
 for i in range(0, len(people)):
     if people[i][1] == maior:
+        person += 1
         if person == heavy_people_counter:
             print(f'e {people[i][0]}', end='')
         elif person == heavy_people_counter - 1:
             print(f'{people[i][0]} ', end='')
-            person += 1
         else:
             print(f'{people[i][0]}, ', end='')
-            person += 1
 
 person = 0
 
