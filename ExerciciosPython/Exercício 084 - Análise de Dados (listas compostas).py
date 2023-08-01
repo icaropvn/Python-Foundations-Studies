@@ -18,8 +18,6 @@ stop = 0
 loop = 1
 maior = 0
 menor = 0
-light_people_counter = 0
-heavy_people_counter = 0
 
 while True:
     temp.append(str(input('Nome: ')).strip().title())
@@ -35,13 +33,9 @@ while True:
     else:
         if weight > maior:
             maior = weight
-        elif weight == maior:
-            heavy_people_counter += 1
 
         if weight < menor:
             menor = weight
-        elif weight == menor:
-            light_people_counter += 1
 
     temp.clear()
 
@@ -62,31 +56,15 @@ while True:
     if stop == 1:
         break
 
-person = 0
-
 print(f'Número de pessoas cadastradas: {len(people)}\n'
       f'Pessoas mais pesadas ({maior:.2f}Kg): ', end='')
 for i in range(0, len(people)):
     if people[i][1] == maior:
-        person += 1
-        if person == heavy_people_counter:
-            print(f'e {people[i][0]}', end='')
-        elif person == heavy_people_counter - 1:
-            print(f'{people[i][0]} ', end='')
-        else:
-            print(f'{people[i][0]}, ', end='')
-
-person = 0
+        print(f'{people[i][0]} ', end='')
 
 print(f'\nPessoas mais leves ({menor:.2f}Kg): ', end='')
 for i in range(0, len(people)):
     if people[i][1] == menor:
-        if person == light_people_counter:
-            print(f'e {people[i][0]}', end='')
-        elif person == light_people_counter - 1:
-            print(f'{people[i][0]} ', end='')
-            person += 1
-        else:
-            print(f'{people[i][0]}, ', end='')
-            person += 1
+        print(f'{people[i][0]} ', end='')
+
 print()
