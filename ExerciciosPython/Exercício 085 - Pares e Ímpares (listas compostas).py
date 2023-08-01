@@ -7,9 +7,7 @@ separando os valores pares dos ímpares.
     No final mostrar os valores pares e ímpares em ordem crescente.
 '''
 
-pares = []
-impares = []
-nums = [pares, impares]
+nums = [[], []]
 
 for i in range(0, 7):
     num = int(input(f'Digite o {i+1}º número: '))
