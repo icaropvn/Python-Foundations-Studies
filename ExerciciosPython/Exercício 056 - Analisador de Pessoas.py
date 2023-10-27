@@ -19,6 +19,7 @@ women = 0
 elder = 0
 elder_name = ''
 soma = 0
+men = 0
 
 for i in range(1, 5):
     if i != 1:
@@ -31,13 +32,20 @@ for i in range(1, 5):
 
     genre = str(input(f'Insira o sexo biológico da pessoa {i}: ')).lower().strip()
 
-    if i == 1 and genre in 'mmasculino':
-        age = elder
-        elder_name = name
-    if genre in 'mmasculino' and age > elder:
-        elder_name = name
-    if genre in 'ffeminino' and age < 20:
-        women += 1
+    if genre in 'Mmmasculino':
+        men += 1
+
+    if genre in 'Mmmasculino':
+        if men == 1:
+            elder = age
+            elder_name = name
+        elif age > elder:
+            elder = age
+            elder_name = name
+    elif genre in 'Fffeminino':
+        if age < 20:
+            women += 1
+
 
 print(f'\nA média de idade das pessoas é: {purple}{soma/4}{end}\n'
       f'O homem mais velho é: {yellow}{elder_name}, com {elder} anos.{end}\n'
