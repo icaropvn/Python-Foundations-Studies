@@ -1,2 +1,2 @@
 # Python Foundations
- Examples and exercises made in Python.
+ Examples and exercises made with Python.
