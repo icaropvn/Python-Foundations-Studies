@@ -56,15 +56,40 @@ while True:
     if stop == 1:
         break
 
+temp_counter = 0
+
 print(f'Número de pessoas cadastradas: {len(people)}\n'
       f'Pessoas mais pesadas ({maior:.2f}Kg): ', end='')
-for i in range(0, len(people)):
-    if people[i][1] == maior:
-        print(f'{people[i][0]} ', end='')
+
+for data in people:
+    if data[1] == maior:
+        temp_counter += 1
+
+for data in people:
+    if data[1] == maior:
+        if temp_counter > 2:
+            print(f'{data[0]}, ', end='')
+        elif temp_counter == 2:
+            print(f'{data[0]} e ', end='')
+        else:
+            print(f'{data[0]}', end='')
+        temp_counter -= 1
+
+temp_counter = 0
+
+for data in people:
+    if data[1] == menor:
+        temp_counter += 1
 
 print(f'\nPessoas mais leves ({menor:.2f}Kg): ', end='')
-for i in range(0, len(people)):
-    if people[i][1] == menor:
-        print(f'{people[i][0]} ', end='')
+for data in people:
+    if data[1] == menor:
+        if temp_counter > 2:
+            print(f'{data[0]}, ', end='')
+        elif temp_counter == 2:
+            print(f'{data[0]} e ', end='')
+        else:
+            print(f'{data[0]}', end='')
+        temp_counter -= 1
 
 print()
