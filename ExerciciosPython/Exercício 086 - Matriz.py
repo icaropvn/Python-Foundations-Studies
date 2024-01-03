@@ -7,19 +7,22 @@ preenchê-la com valores lidos do usuário.
     No final, mostrar a matriz na tela com a formatação correta.
 '''
 
-# SOLUÇÃO CONCEBIDA SOZINHO
-columns = []
-lines = []
+from random import choice
+
+matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+inputs = ['Insira um número: ', 'Digite um número: ', 'Escolha um número: ']
 
 for i in range(0, 3):
     for j in range(0, 3):
-        columns.append(int(input(f'Valor [{i}, {j}]: ')))
-    lines.append(columns[:])
-    columns.clear()
+        matrix[i][j] = int(input(choice(inputs)))
 
-print(30 * '-')
+print()
 
 for i in range(0, 3):
     for j in range(0, 3):
-        print(f'{lines[i][j]:2} ', end='')
-    print()
+        if j == 0:
+            print(f'| {matrix[i][j]:2} ', end='')
+        elif j == 2:
+            print(f' {matrix[i][j]:2} |')
+        else:
+            print(f'{matrix[i][j]:2}', end='')
